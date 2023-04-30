@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <Style>
+        body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+}
+
+h1 {
+  color: rgb(205, 135, 6);
+  font-size: 42px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+* {
+            box-sizing: border-box
+        }
+
+        .fade-in {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.text {
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  color: orange;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
+}
+
+.mySlides {
+    display: none
+}
+
+img {
+    
+    display: flex;
+    justify-content: center;
+    position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+   
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(121, 121, 121, 0.8);
+}
+
+
+    </Style>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <h1>BOOKFULL</h1>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade fade-in">
+          <img src="1.png" >
+          <div class="text">Introduction</div>
+        </div>
+        
+        <div class="mySlides fade fade-in">
+          <img src="2.png" style="width: 60%; height: 70%;">
+          <div class="text">Persona</div>
+        </div>
+        
+        <div class="mySlides fade fade-in">
+          <img src="3.png" style="width: 30%; height: 60%;" >
+          <div class="text">Scenarios</div>
+        </div>
+
+        <div class="mySlides fade fade-in">
+            <img src="4.png" style="width: 30%; height: 60%;">
+            <div class="text">Scenarios</div>
+          </div>
+        
+          <div class="mySlides fade fade-in">
+            <img src="5.png">
+            <div class="text">Scenarios</div>
+          </div>
+
+          <div class="mySlides fade fade-in">
+            <img src="6.png">
+            <div class="text">Scenarios</div>
+          </div>
+
+          <div class="mySlides fade fade-in">
+            <img src="7.png" style=" width: 492.5px; height: 472px;">
+            <div class="text">Scenarios</div>
+          </div>
+
+          <div class="mySlides fade fade-in">
+            <img src="8.png" style="width: 80%; height: 70%;">
+            <div class="text">Information Architecture</div>
+          </div>
+          
+          <div class="mySlides fade fade-in">
+            <img src="9.png" style="height: 70%;">
+            <div class="text">UserFlow</div>
+          </div>
+          
+          <div class="mySlides fade fade-in">
+            <img src="10.png" >
+            <div class="text">Task Flow</div>
+          </div>
+  
+          <div class="mySlides fade fade-in">
+              <img src="11.png" >
+              <div class="text">Task Flow</div>
+            </div>
+          
+            <div class="mySlides fade fade-in">
+              <img src="12.png">
+              <div class="text">Task Flow</div>
+            </div>
+  
+            <div class="mySlides fade fade-in">
+              <img src="13.png">
+              <div class="text">Task Flow</div>
+            </div>
+  
+            <div class="mySlides fade fade-in">
+              <img src="14.png">
+              <div class="text">Task Flow</div>
+            </div>
+
+            <div class="mySlides fade fade-in">
+                <img src="15.png" >
+                <div class="text">Similar appss</div>
+              </div>
+              
+              <div class="mySlides fade fade-in">
+                <img src="16.png" >
+                <div class="text">Wireframe</div>
+              </div>
+              
+              <div class="mySlides fade fade-in">
+                <img src="17.png" >
+                <div class="text">Wireframe</div>
+              </div>
+      
+              <div class="mySlides fade fade-in">
+                  <img src="18.png" >
+                  <div class="text">Wireframe</div>
+                </div>
+              
+                <div class="mySlides fade fade-in">
+                  <img src="19.png">
+                  <div class="text">Wireframe</div>
+                </div>
+      
+                <div class="mySlides fade fade-in">
+                  <img src="20.png">
+                  <div class="text">Wireframes</div>
+                </div>
+      
+                <div class="mySlides fade fade-in">
+                  <img src="21.png" style=" width: 492.5px; height: 300px;">
+                  <div class="text">UI-Samples</div>
+                </div>
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+</body>
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("fade-in"); // remove the class from all slides
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].classList.add("fade-in"); // add the class to the current slide
+}
+
+</script>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <Style>
+        body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+}
+
+h1 {
+  color: rgb(205, 135, 6);
+  font-size: 42px;
+  font-family: "Poppins", sans-serif;
+  font-weight: bolder;
+  text-align: center;
+}
+* {
+            box-sizing: border-box
+        }
+
+        .fade-in {
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.text {
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+  color: orange;
+  font-size: 28px;
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
+}
+
+.mySlides {
+    display: none
+}
+
+img {
+    
+    display: flex;
+    justify-content: center;
+    position: absolute;
+      top: 10%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+   
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(121, 121, 121, 0.8);
+}
+
+
+    </Style>
+    <meta charset="UTF-8" />
+    <title>title</title>
+</head>
+<body>
+    <h1>BOOKFULL</h1>
+    <div class="slideshow-container">
+
+        <div class="mySlides fade fade-in">
+          <img src="bookfull.png" >
+          <div class="text">Introduction</div>
+        </div>
+        
+        <div class="mySlides fade fade-in">
+          <img src="project brief.png" >
+          <div class="text">Project brief</div>
+        </div>
+        
+        <div class="mySlides fade fade-in">
+          <img src="map.png" >
+          <div class="text">Timeline and Map</div>
+        </div>
+
+        <div class="mySlides fade fade-in">
+            <img src="character.png" >
+            <div class="text">Character mapping</div>
+          </div>
+        
+          <div class="mySlides fade fade-in">
+            <img src="stakeholder.png">
+            <div class="text">Stakeholder's mapping</div>
+          </div>
+
+          <div class="mySlides fade fade-in">
+            <img src="empathy.png">
+            <div class="text">Empathy Mapping</div>
+          </div>
+
+          <div class="mySlides fade fade-in">
+            <img src="ui.png" style=" width: 492.5px; height: 472px;">
+            <div class="text">UI-Samples</div>
+          </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+        
+        </div>
+</body>
+<script>
+    let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("fade-in"); // remove the class from all slides
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";
+  slides[slideIndex-1].classList.add("fade-in"); // add the class to the current slide
+}
+
+</script>
+</html>
